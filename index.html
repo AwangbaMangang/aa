@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meetei Mayek Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Meetei+Mayek&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Meetei Mayek Converter</h1>
+            <p>Convert repetitive Meetei Mayek text using dictionary replacements</p>
+        </header>
+
+        <div class="main-content">
+            <div class="input-section">
+                <div class="section-header">
+                    <h2>Input Text</h2>
+                    <div class="actions">
+                        <button id="clear-btn" class="btn-secondary">Clear</button>
+                        <label for="file-upload" class="btn-secondary">Upload Text File</label>
+                        <input type="file" id="file-upload" accept=".txt" style="display: none;">
+                    </div>
+                </div>
+                <textarea id="input-text" placeholder="Paste or type your Meetei Mayek text here..."></textarea>
+                <div class="char-count">Characters: <span id="input-char-count">0</span></div>
+            </div>
+
+            <div class="controls">
+                <button id="convert-btn" class="btn-primary">Convert Text</button>
+                
+                <div class="dictionary-controls">
+                    <h3>Dictionary Options</h3>
+                    <div class="dictionary-buttons">
+                        <label for="dict-upload" class="btn-secondary">Upload Custom Dictionary</label>
+                        <input type="file" id="dict-upload" accept=".json" style="display: none;">
+                        <button id="reset-dict-btn" class="btn-secondary">Reset to Default</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="output-section">
+                <div class="section-header">
+                    <h2>Converted Output</h2>
+                    <div class="actions">
+                        <button id="copy-btn" class="btn-secondary">Copy</button>
+                        <button id="download-btn" class="btn-secondary">Download</button>
+                    </div>
+                </div>
+                <div id="output-text" class="output-area"></div>
+                <div class="char-count">Characters: <span id="output-char-count">0</span></div>
+            </div>
+        </div>
+
+        <div class="notification" id="notification"></div>
+    </div>
+
+    <script src="dictionary.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
